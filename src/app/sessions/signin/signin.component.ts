@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { UserNames } from './userNames';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Route } from '@angular/router';
-export class User{
+export class User {
 constructor(
-  username: string,
-  password: string
-){}
+  public userName: string,
+  public password: string
+) {}
 }
 
 @Component({
@@ -17,31 +16,36 @@ constructor(
 
 
 export class SigninComponent implements OnInit {
-  users: UserNames[] = [
-    {
-    username: 'rajveer',
-    password: 'singh'
-    }]
 
     user: User;
     signinForm: FormGroup;
     signinError: 'invalid credentials';
-    isLogin: Boolean = false;
+    isLogin: any = false;
 
-  constructor(private readonly rote: Route,
-    private readonly builder: FormBuilder) { }
+  constructor(private readonly builder: FormBuilder
+              ) {}
 
   ngOnInit() {
     this.inItForm();
   }
-  signing(){
-
+  signin() {
+    this.user = this.signinForm.value;
+    if (this.user.userName === 'rajveer' && this.user.password === 'singh') {
+      this.isLogin = false;
+      localStorage.setItem('name', this.user.userName);
+      //   this.signinForm.controls['password'].setValue(btoa(this.signinForm.controls['password'].value));
+      //  this.sessionsService.signin(this.signinForm.value);
+      // this.router.navigateByUrl('/service-user/profile');
+    } else {
+      this.isLogin = true;
+    }
   }
-  inItForm(){
+
+  inItForm() {
     this.signinForm = this.builder.group({
-      username: ['',Validators.required],
-      password: ['',Validators.required]
-    })
+      userName: ['', Validators.required],
+      password: ['', Validators.required]
+    });
   }
 
 }

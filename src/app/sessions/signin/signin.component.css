@@ -1,0 +1,62 @@
+
+.signin-form {
+   
+    color: rgba(255, 255, 255, 0.9);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .white{
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .mat-stroked-button[disabled][disabled] {
+    margin: 0px 14px 24px 0;
+    color: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.9);
+  }
+  .mat-form-field {
+    display: flex;
+    flex-direction: row;
+    margin: 16px 0;
+    
+  }
+  
+  .full-width{
+    width: 180%;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  a {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    text-decoration: none;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  .mat-input-element {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.9);
+    caret-color: rgba(255, 255, 255, 0.9);
+    
+    font-weight: 400;
+  }
+  .mat-form-field-label .mat-form-field-required-marker {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+  }
+  .mat-form-field.mat-form-field-invalid .mat-form-field-label.mat-accent,
+  .mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker {
+    color: #ffc107;
+    font-weight: 400;
+  }
+  .mat-error {
+    color: #ffc107;
+    font-weight: 400;
+  }
+  .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+    color: #ffc107;
+  }

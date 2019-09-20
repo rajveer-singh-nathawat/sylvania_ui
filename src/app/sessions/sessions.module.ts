@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatFormFieldModule,
+        MatButtonModule,
+        MatInputModule} from '@angular/material';
 
 import { SessionsRoutingModule } from './sessions-routing.module';
 import { SigninComponent } from './signin/signin.component';
@@ -13,7 +16,10 @@ import { SessionsComponent } from './sessions.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    SessionsRoutingModule
+    SessionsRoutingModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule
   ]
 })
 export class SessionsModule { }
