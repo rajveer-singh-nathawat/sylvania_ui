@@ -1,3 +1,15 @@
-<p>
-  sidebar works!
-</p>
+<mat-sidenav-container class="sidebar-container">
+    <mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+                 (closed)="events.push('close!')">
+      Sidenav content
+    </mat-sidenav>
+  
+    <mat-sidenav-content >
+     
+      <p><button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button></p>
+      
+      
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+  
