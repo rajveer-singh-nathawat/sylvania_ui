@@ -5,14 +5,15 @@ import {MatToolbarModule,
   MatSidenavModule,
   MatButtonModule,
   MatIconModule,
+  MatListModule,
+  MatMenuModule
  } from '@angular/material';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { TopnavComponent } from './topnav/topnav.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [HomeComponent, TopnavComponent, SidebarComponent],
+  declarations: [HomeComponent, SidebarComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -20,7 +21,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatListModule,
+    MatMenuModule
   ]
 })
 export class HomeModule { }

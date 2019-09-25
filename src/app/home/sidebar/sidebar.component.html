@@ -1,15 +1,35 @@
-<mat-sidenav-container class="sidebar-container">
-    <mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
-                 (closed)="events.push('close!')">
+<div>
+  <mat-toolbar id="top-nav">
+      <button type="button" mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1>Sylvania App</h1>
+      <span class="nav-spacer"></span>
+      <span class="top-nav-info" >Rajveer Singh</span>
+      <button mat-icon-button [matMenuTriggerFor]="menu"  aria-label="icon-button with a menu" class="toolbar-menu">
+        <mat-icon>portrait</mat-icon>
+      </button>
+      <!-- <button mat-icon-button [matMenuTriggerFor]="menu"  >
+          <mat-icon>portrait</mat-icon>
+        </button> -->
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voice mail</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
+        </mat-menu>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidebar-container" id="sidebar">
+    <mat-sidenav class="sidenav" #sidenav  mode="side" >
       Sidenav content
     </mat-sidenav>
-  
-    <mat-sidenav-content >
-     
-      <p><button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button></p>
-      
-      
-    </mat-sidenav-content>
+    <mat-sidenav-content ></mat-sidenav-content>
   </mat-sidenav-container>
-  
-  
+  </div>
