@@ -7,10 +7,7 @@
       <button mat-icon-button [matMenuTriggerFor]="menu"  aria-label="icon-button with a menu" class="toolbar-menu">
         <mat-icon>portrait</mat-icon>
       </button>
-      <!-- <button mat-icon-button [matMenuTriggerFor]="menu"  >
-          <mat-icon>portrait</mat-icon>
-        </button> -->
-        <mat-menu #menu="matMenu">
+          <mat-menu #menu="matMenu">
           <button mat-menu-item>
             <mat-icon>dialpad</mat-icon>
             <span>Redial</span>
@@ -28,7 +25,21 @@
 
   <mat-sidenav-container class="sidebar-container" id="sidebar">
     <mat-sidenav class="sidenav" #sidenav  mode="side" >
-      Sidenav content
+     <h2> Sidenav content </h2>
+      <mat-nav-list class="nav-top">
+        <a *ngFor="let item of primaryMenu" mat-list-item routerLink="/{{item.path}}" routerLinkActive="active"
+            id="main_menu" title="{{ item.name }}">
+            <mat-icon class="sidenav-icon">{{item.icon}}</mat-icon> {{ item.name }}
+        </a>
+    </mat-nav-list>
+
+    <mat-nav-list class="nav-bottom">
+        <a *ngFor="let secondaryItem of secondaryMenu" mat-list-item routerLink="/{{secondaryItem.path}}"
+            routerLinkActive="active" id="secondary_menu"
+            title="{{ secondaryItem.name }}">
+            <mat-icon class="sidenav-icon">{{secondaryItem.icon}}</mat-icon> {{ secondaryItem.name }}
+        </a>
+    </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content ></mat-sidenav-content>
   </mat-sidenav-container>
