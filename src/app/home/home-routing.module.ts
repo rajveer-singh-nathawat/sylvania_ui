@@ -5,7 +5,29 @@ import { HomeComponent } from './home.component';
 const homeroutes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: '../features/dashboard/dashboard.module#DashboardModule'
+      },
+      {
+        path: 'alumnus',
+        loadChildren: '../features/alumnus/alumnus.module#AlumnusModule'
+      },
+      {
+        path: 'sylvanians',
+        loadChildren: '../features/sylvanians/sylvanians.module#SylvaniansModule'
+      },
+      {
+        path: 'gallery',
+        loadChildren: '../features/gallery/gallery.module#GalleryModule'
+      },
+      {
+        path: 'help',
+        loadChildren: '../features/help/help.module#HelpModule'
+      },
+    ]
   }
 ];
 

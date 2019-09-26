@@ -6,7 +6,8 @@ import {MatToolbarModule,
   MatButtonModule,
   MatIconModule,
   MatListModule,
-  MatMenuModule
+  MatMenuModule,
+  MatDividerModule
  } from '@angular/material';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
@@ -23,7 +24,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MatIconModule,
     FormsModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDividerModule
   ]
 })
 export class HomeModule { }

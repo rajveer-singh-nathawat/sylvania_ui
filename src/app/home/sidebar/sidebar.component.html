@@ -25,10 +25,10 @@
 
   <mat-sidenav-container class="sidebar-container" id="sidebar">
     <mat-sidenav class="sidenav" #sidenav  mode="side" >
-     <h2> Sidenav content </h2>
+    
       <mat-nav-list class="nav-top">
         <a *ngFor="let item of primaryMenu" mat-list-item routerLink="/{{item.path}}" routerLinkActive="active"
-            id="main_menu" title="{{ item.name }}">
+            id="main_menu" title="Go to {{ item.name }}">
             <mat-icon class="sidenav-icon">{{item.icon}}</mat-icon> {{ item.name }}
         </a>
     </mat-nav-list>
@@ -36,7 +36,7 @@
     <mat-nav-list class="nav-bottom">
         <a *ngFor="let secondaryItem of secondaryMenu" mat-list-item routerLink="/{{secondaryItem.path}}"
             routerLinkActive="active" id="secondary_menu"
-            title="{{ secondaryItem.name }}">
+            title="Go to{{ secondaryItem.name }}">
             <mat-icon class="sidenav-icon">{{secondaryItem.icon}}</mat-icon> {{ secondaryItem.name }}
         </a>
     </mat-nav-list>
