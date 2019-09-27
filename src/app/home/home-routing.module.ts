@@ -1,11 +1,17 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { AutenticationGuardGuard } from '../guards/autentication-guard.guard';
 
-const homeroutes: Routes = [
+const homeroutes: Routes = [{
+  path: '',
+  redirectTo: 'dashboard',
+  pathMatch: 'full',
+},
   {
     path: '',
     component: HomeComponent,
+    canActivateChild: [AutenticationGuardGuard],
     children: [
       {
         path: 'dashboard',

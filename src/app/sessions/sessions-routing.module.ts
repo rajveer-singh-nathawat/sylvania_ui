@@ -7,7 +7,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 const sessionroutes: Routes = [
   {
-    path:'',
+    path: '',
     redirectTo: 'SigninComponent',
     pathMatch: 'full'
   },
@@ -20,12 +20,12 @@ const sessionroutes: Routes = [
       component: SigninComponent
       },
       {
-        path:'404',
-        component:ErrorComponent
+        path: '404',
+        component: ErrorComponent
       },
       {
         path: 'error',
-        component:NotFoundComponent
+        component: NotFoundComponent
 
       }
     ]

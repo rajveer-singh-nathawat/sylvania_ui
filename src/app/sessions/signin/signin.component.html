@@ -5,7 +5,7 @@
   <mat-error *ngIf="isLogin">invalid credentials</mat-error>
 
 
-  <form [formGroup]="signinForm" (ngSubmit)="signin()" autocomplete="off">
+  <form [formGroup]="signinForm" (ngSubmit)="handleLogin()" autocomplete="off">
 
     <!-- <input id="fakeUsername" name="username" style="display:none" type="text" autocomplete="off"> -->
     <!-- <input id="fakePassword" name="password" style="display:none" type="password" autocomplete="off"> -->

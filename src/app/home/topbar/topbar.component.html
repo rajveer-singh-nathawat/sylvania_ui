@@ -1,0 +1,15 @@
+<mat-toolbar id="top-nav">
+  <button type="button" mat-icon-button (click)="toggleSideBar()"><mat-icon>menu</mat-icon></button>
+  <h1>Sylvania App</h1>
+  <span class="nav-spacer"></span>
+  <span class="top-nav-info" >Rajveer Singh</span>
+  <button mat-icon-button [matMenuTriggerFor]="menu"  aria-label="icon-button with a menu" class="toolbar-menu">
+    <mat-icon>portrait</mat-icon>
+  </button>
+      <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onLoggedOut()" id="logout">
+            <mat-icon color="accent">exit_to_app</mat-icon>
+            <span>Sign out</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>

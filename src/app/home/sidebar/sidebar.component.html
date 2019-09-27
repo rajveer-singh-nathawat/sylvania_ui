@@ -1,46 +1,14 @@
-<div>
-  <mat-toolbar id="top-nav">
-      <button type="button" mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-      <h1>Sylvania App</h1>
-      <span class="nav-spacer"></span>
-      <span class="top-nav-info" >Rajveer Singh</span>
-      <button mat-icon-button [matMenuTriggerFor]="menu"  aria-label="icon-button with a menu" class="toolbar-menu">
-        <mat-icon>portrait</mat-icon>
-      </button>
-          <mat-menu #menu="matMenu">
-          <button mat-menu-item>
-            <mat-icon>dialpad</mat-icon>
-            <span>Redial</span>
-          </button>
-          <button mat-menu-item disabled>
-            <mat-icon>voicemail</mat-icon>
-            <span>Check voice mail</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>notifications_off</mat-icon>
-            <span>Disable alerts</span>
-          </button>
-        </mat-menu>
-  </mat-toolbar>
+<mat-nav-list class="nav-top">
+    <a *ngFor="let item of primaryMenu" mat-list-item routerLink="/{{item.path}}" routerLinkActive="active"
+        id="main_menu" title="Go to {{ item.name }}">
+        <mat-icon class="sidenav-icon">{{item.icon}}</mat-icon> {{ item.name }}
+    </a>
+</mat-nav-list>
 
-  <mat-sidenav-container class="sidebar-container" id="sidebar">
-    <mat-sidenav class="sidenav" #sidenav  mode="side" >
-    
-      <mat-nav-list class="nav-top">
-        <a *ngFor="let item of primaryMenu" mat-list-item routerLink="/{{item.path}}" routerLinkActive="active"
-            id="main_menu" title="Go to {{ item.name }}">
-            <mat-icon class="sidenav-icon">{{item.icon}}</mat-icon> {{ item.name }}
-        </a>
-    </mat-nav-list>
-
-    <mat-nav-list class="nav-bottom">
-        <a *ngFor="let secondaryItem of secondaryMenu" mat-list-item routerLink="/{{secondaryItem.path}}"
-            routerLinkActive="active" id="secondary_menu"
-            title="Go to{{ secondaryItem.name }}">
-            <mat-icon class="sidenav-icon">{{secondaryItem.icon}}</mat-icon> {{ secondaryItem.name }}
-        </a>
-    </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content ></mat-sidenav-content>
-  </mat-sidenav-container>
-  </div>
+<mat-nav-list class="nav-bottom">
+    <a *ngFor="let secondaryItem of secondaryMenu" mat-list-item routerLink="/{{secondaryItem.path}}"
+        routerLinkActive="active" id="secondary_menu"
+        title="Go to{{ secondaryItem.name }}">
+        <mat-icon class="sidenav-icon">{{secondaryItem.icon}}</mat-icon> {{ secondaryItem.name }}
+    </a>
+</mat-nav-list>

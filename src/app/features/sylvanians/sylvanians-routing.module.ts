@@ -4,7 +4,7 @@ import { SylvaniansComponent } from './sylvanians.component';
 
 const routes: Routes = [
   {
-    path: 'sylvanians',
+    path: '',
     component: SylvaniansComponent
   }
 ];

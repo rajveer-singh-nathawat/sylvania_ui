@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 export interface MenuItem {
   name?: string;
   path?: string;
   icon?: string;
 }
 const sideMenu: MenuItem[] = [{
- name: 'Dashboard',
- path: 'dashboard',
- icon: 'dashboard'
+  name: 'Dashboard',
+  path: 'dashboard',
+  icon: 'dashboard'
 },
 {
   name: 'Alumnus',
@@ -27,8 +27,8 @@ const sideMenu: MenuItem[] = [{
 
 const secondryDefaultMenu: MenuItem[] = [{
   name: 'Help',
-    icon: 'help_outline',
-    path: 'help'
+  icon: 'help_outline',
+  path: 'help'
 }];
 @Component({
   selector: 'app-sidebar',
@@ -36,23 +36,25 @@ const secondryDefaultMenu: MenuItem[] = [{
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
   primaryMenu: MenuItem[] = [];
   secondaryMenu: MenuItem[] = [];
+  @ViewChild('sidenav') sidenav: any;
   constructor() {
-     this.filterMenus(sideMenu, this.primaryMenu);
-     this.filterMenus(secondryDefaultMenu, this.secondaryMenu);
-
-    }
+    this.filterMenus(sideMenu, this.primaryMenu);
+    this.filterMenus(secondryDefaultMenu, this.secondaryMenu);
+  }
+  ngOnInit() {
+  }
+  toggleSideBar() {
+    this.sidenav.toggle();
+  }
   private filterMenus(source, filtered) {
 
     source.forEach(element => {
-       filtered.push(element);
+      filtered.push(element);
 
     });
 
-  }
-  ngOnInit() {
   }
 
 }

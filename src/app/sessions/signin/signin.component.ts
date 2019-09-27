@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Route } from '@angular/router';
+import { Route, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 export class User {
 constructor(
   public userName: string,
@@ -22,21 +23,20 @@ export class SigninComponent implements OnInit {
     signinError: 'invalid credentials';
     isLogin: any = false;
 
-  constructor(private readonly builder: FormBuilder
+  constructor(private readonly builder: FormBuilder,
+              private readonly auth: AuthService,
+              private readonly router: Router
               ) {}
 
   ngOnInit() {
     this.inItForm();
   }
-  signin() {
+  handleLogin() {
     this.user = this.signinForm.value;
-    if (this.user.userName === 'rajveer' && this.user.password === 'singh') {
+    if (this.auth.authenticate(this.user.userName, this.user.password)) {
+      this.router.navigate(['dashboard']);
       this.isLogin = false;
-      localStorage.setItem('name', this.user.userName);
-      //   this.signinForm.controls['password'].setValue(btoa(this.signinForm.controls['password'].value));
-      //  this.sessionsService.signin(this.signinForm.value);
-      // this.router.navigateByUrl('/service-user/profile');
-    } else {
+        } else {
       this.isLogin = true;
     }
   }

@@ -1,64 +1,3 @@
-.sidebar-container {
-    position: absolute;
-    top: 56px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    
-   
-  }
-  
-  .example-events {
-    width: 300px;
-    height: 200px;
-    overflow: auto;
-    
-  } 
-  .sidenav{
-    
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  width: 250px;
-  padding: 4px;
-  position: fixed;
-  top: 56px;
-  bottom: 0;
-  background: coral;
-  -ms-overflow-y: auto;
-  overflow-y: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  flex-direction: column;
-  box-shadow:0px 3px 5px rgba(0, 0, 0,1.2);
-  } 
-
-  #top-nav {
-    position: fixed;
-    background-color: coral;
-    min-height: 56px;
-    z-index: 2;
-    box-shadow:0px 3px 5px rgba(0, 0, 0,0.2);
-}
-
-.mat-toolbar-row, .mat-toolbar-single-row {
-    height: 56px;
-   
-}
-
-.toolbar-menu {
-  position: relative;
-  text-decoration: none;
-  color: #fff;
-}
-.top-nav-info {
-  font-size: 14px;
-    margin-left: 16px;    
-    text-shadow: 0px 3px 5px rgb(228, 228, 228);
-}
-.nav-spacer {
-  flex: 1 1 auto;
-}
-
 .nav-top{
   margin-top: 24px;
 }
@@ -69,23 +8,12 @@
 }
 #main_menu:hover{
   background: #fff;
-  justify-content: center;
-  
-}
-/* :active */
-#secondary_menu:hover,:active{
-  background: #fff;
-}
-h2{
-  text-align: center;
-  text-shadow: 0px 3px 5px rgb(228, 228, 228);
-  font-family: Roboto,Helvetica Neue,sans-serif;
-  font-weight: 400;
-}
-h1{
-  text-shadow: 0px 3px 5px rgb(228, 228, 228);
+  justify-content: center; 
 }
 
+#secondary_menu:hover{
+  background: #fff;
+}
 .sidenav-icon{
   margin-right: 10px;
 }

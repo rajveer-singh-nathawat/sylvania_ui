@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { GalleryComponent } from './gallery.component';
 
 const routes: Routes = [{
-  path: 'gallery',
+  path: '',
   component: GalleryComponent
 }];
 

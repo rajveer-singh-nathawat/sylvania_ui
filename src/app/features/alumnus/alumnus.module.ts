@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { AlumnusRoutingModule } from './alumnus-routing.module';
 import { AlumnusComponent } from './alumnus.component';
-import { MatCardModule } from '@angular/material';
+import { MaterialModule } from 'src/app/material/material.module';
 
 @NgModule({
   declarations: [AlumnusComponent],
   imports: [
     CommonModule,
     AlumnusRoutingModule,
-    MatCardModule
+    MaterialModule
   ]
 })
 export class AlumnusModule { }

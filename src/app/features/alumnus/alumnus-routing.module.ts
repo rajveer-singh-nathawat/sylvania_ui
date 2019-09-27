@@ -4,7 +4,7 @@ import { AlumnusComponent } from './alumnus.component';
 
 const routes: Routes = [
   {
-    path: 'alumnus',
+    path: '',
     component: AlumnusComponent
   }
 ];
