@@ -7,8 +7,8 @@
 
   <form [formGroup]="signinForm" (ngSubmit)="handleLogin()" autocomplete="off">
 
-    <!-- <input id="fakeUsername" name="username" style="display:none" type="text" autocomplete="off"> -->
-    <!-- <input id="fakePassword" name="password" style="display:none" type="password" autocomplete="off"> -->
+    <input id="fakeUsername" name="username" style="display:none" type="text" autocomplete="off">
+    <input id="fakePassword" name="password" style="display:none" type="password" autocomplete="off">
 
     <h3>Please fill in your username and password</h3>
 
@@ -25,8 +25,8 @@
     </mat-form-field>
 
     <button mat-stroked-button [disabled]="signinForm.invalid" id="signinBtn"> Sign in </button>
+    <button mat-stroked-button [routerLink]="'/sessions/register'"  id="signinBtn"> Sign up </button>
 
   </form>
 
-  <!-- <a [routerLink]="'/sessions/forgot-password'" class="forgot-password">Forgot password? </a> -->
 </div>

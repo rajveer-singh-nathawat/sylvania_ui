@@ -8,35 +8,29 @@ import {MatSidenavModule,
      MatMenuModule,
      MatDividerModule,
      MatFormFieldModule,
-     MatInputModule
+     MatInputModule,
+     MatStepperModule,
+     MatRadioModule
 
 } from '@angular/material';
 import { CommonModule } from '@angular/common';
 
-const materialComponent = [
-
+const materialComponent = [CommonModule,
+  MatSidenavModule,
+  MatCardModule,
+  MatToolbarModule,
+  MatButtonModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatDividerModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatStepperModule,
+  MatRadioModule
 ];
 @NgModule({
-  imports: [CommonModule,
-    MatSidenavModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatDividerModule,
-    MatFormFieldModule,
-    MatInputModule],
-  exports: [MatSidenavModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatDividerModule,
-    MatFormFieldModule,
-    MatInputModule]
+  imports: [materialComponent],
+  exports: [materialComponent]
 })
 export class MaterialModule { }

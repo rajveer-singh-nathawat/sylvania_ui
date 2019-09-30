@@ -1,6 +1,6 @@
 #top-nav {
     position: fixed;
-    background-color: coral;
+    background-color: #6b5b95;
     min-height: 56px;
     z-index: 2;
     box-shadow:0px 3px 5px rgba(0, 0, 0,0.2);

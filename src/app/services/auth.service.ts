@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
+import {  Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export  class AuthService {
 
-  constructor() { }
-  authenticate(username , password ) {
+  constructor(private readonly route: Router ) { }
+  async authenticate(username , password ) {
     if (username === 'rajveer' && password === 'singh') {
-      sessionStorage.setItem('authenticateUser', username);
+     await sessionStorage.setItem('authenticateUser', username);
       return true;
     }
     return false;
@@ -21,8 +23,9 @@ let principle = sessionStorage.getItem('authenticateUser');
     const user = sessionStorage.getItem('authenticateUser');
     return !(user === null );
   }
-  // logOut() {
-  //   sessionStorage.removeItem('authenticateUser');
-  // }
+ async logOut() {
+   await sessionStorage.removeItem('authenticateUser');
+    this.route.navigate(['sessions']);
+  }
 }
 

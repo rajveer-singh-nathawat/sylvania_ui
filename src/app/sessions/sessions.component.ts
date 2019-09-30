@@ -8,7 +8,7 @@ import { Component, OnInit, ElementRef, OnDestroy } from '@angular/core';
 export class SessionsComponent implements OnDestroy, OnInit {
   logoSrc: any = './assets/logo.png';
   constructor(private readonly elRef: ElementRef) {
-    elRef.nativeElement.ownerDocument.body.style.background = 'rgba(255, 99, 71, 1)';
+    elRef.nativeElement.ownerDocument.body.style.background = '#6b5b95';
     elRef.nativeElement.ownerDocument.body.style.overflow = 'auto';
   }
 

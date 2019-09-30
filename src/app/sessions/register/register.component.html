@@ -1,3 +1,79 @@
-<p>
-  register works!
-</p>
+<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button> -->
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill your Login Details</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Username" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="password" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Confirm password" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill your Personal Details</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="FullName" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="PhoneNo" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="DOB" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Qualification" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Fill your Current Status</ng-template>
+      <div>
+        <label>living status</label>
+        <mat-radio-group formControlName="thirdCtrl">
+          <mat-radio-button value="auto">Sylvanian</mat-radio-button>
+          <mat-radio-button value="always">Alumnus</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div>
+          <label>Job Status</label>
+          <mat-radio-group formControlName="thirdCtrl">
+            <mat-radio-button value="auto">Doing Job</mat-radio-button>
+            <mat-radio-button value="always">Preparing</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      <mat-form-field>
+        <input matInput placeholder="job location" formControlName="thirdCtrl" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Designation" formControlName="thirdCtrl" required>
+      </mat-form-field>
+      
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Save</button>
+      </div>
+    </form>
+  </mat-step>
+ </mat-horizontal-stepper>

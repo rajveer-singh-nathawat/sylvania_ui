@@ -2,7 +2,7 @@
   <button type="button" mat-icon-button (click)="toggleSideBar()"><mat-icon>menu</mat-icon></button>
   <h1>Sylvania App</h1>
   <span class="nav-spacer"></span>
-  <span class="top-nav-info" >Rajveer Singh</span>
+  <span class="top-nav-info" >{{currentUser}}</span>
   <button mat-icon-button [matMenuTriggerFor]="menu"  aria-label="icon-button with a menu" class="toolbar-menu">
     <mat-icon>portrait</mat-icon>
   </button>

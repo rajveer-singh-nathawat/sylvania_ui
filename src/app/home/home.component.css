@@ -8,8 +8,6 @@
     
    
   }
-  
-  
   .sidenav{
     
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -18,7 +16,7 @@
   position: fixed;
   top: 56px;
   bottom: 0;
-  background: coral;
+  background: #6b5b95;
   -ms-overflow-y: auto;
   overflow-y: auto;
   display: flex;

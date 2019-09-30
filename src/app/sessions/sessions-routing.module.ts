@@ -4,11 +4,12 @@ import { SessionsComponent } from './sessions.component';
 import { SigninComponent } from './signin/signin.component';
 import { ErrorComponent } from './error/error.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { RegisterComponent } from './register/register.component';
 
 const sessionroutes: Routes = [
   {
     path: '',
-    redirectTo: 'SigninComponent',
+    redirectTo: 'signin',
     pathMatch: 'full'
   },
   {
@@ -18,6 +19,10 @@ const sessionroutes: Routes = [
       {
       path: 'signin',
       component: SigninComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
       },
       {
         path: '404',
