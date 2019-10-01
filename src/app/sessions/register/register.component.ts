@@ -20,7 +20,7 @@ export class RegisterData {
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-isLinear = false;
+isLinear = true;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;

@@ -8,12 +8,13 @@ import {  Router } from '@angular/router';
 export  class AuthService {
 
   constructor(private readonly route: Router ) { }
-  async authenticate(username , password ) {
+   authenticate(username , password ) {
     if (username === 'rajveer' && password === 'singh') {
-     await sessionStorage.setItem('authenticateUser', username);
-      return true;
-    }
+     sessionStorage.setItem('authenticateUser', username);
+     return true;
+    } else {
     return false;
+    }
   }
 
   userData() {
@@ -25,7 +26,7 @@ let principle = sessionStorage.getItem('authenticateUser');
   }
  async logOut() {
    await sessionStorage.removeItem('authenticateUser');
-    this.route.navigate(['sessions']);
+   this.route.navigate(['sessions']);
   }
 }
 

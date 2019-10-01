@@ -20,8 +20,9 @@ export class SigninComponent implements OnInit {
 
     user: User;
     signinForm: FormGroup;
-    signinError: 'invalid credentials';
-    isLogin: any = false;
+    signinError = 'invalid credentials';
+    // tslint:disable-next-line: no-inferrable-types
+    isLogin: boolean = false;
 
   constructor(private readonly builder: FormBuilder,
               private readonly auth: AuthService,
@@ -34,8 +35,8 @@ export class SigninComponent implements OnInit {
   handleLogin() {
     this.user = this.signinForm.value;
     if (this.auth.authenticate(this.user.userName, this.user.password)) {
-      this.router.navigate(['dashboard']);
       this.isLogin = false;
+      this.router.navigate(['dashboard']);
         } else {
       this.isLogin = true;
     }

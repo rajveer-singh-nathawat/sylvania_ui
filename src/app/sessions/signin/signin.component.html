@@ -2,7 +2,6 @@
   <h2>Sign in </h2>
 
   <mat-error *ngIf="isLogin">{{signinError}}</mat-error>
-  <mat-error *ngIf="isLogin">invalid credentials</mat-error>
 
 
   <form [formGroup]="signinForm" (ngSubmit)="handleLogin()" autocomplete="off">
@@ -24,8 +23,8 @@
       <mat-error *ngIf="signinForm.controls.password.invalid" >Password is required</mat-error>
     </mat-form-field>
 
-    <button mat-stroked-button [disabled]="signinForm.invalid" id="signinBtn"> Sign in </button>
-    <button mat-stroked-button [routerLink]="'/sessions/register'"  id="signinBtn"> Sign up </button>
+    <button mat-stroked-button [disabled]= "signinForm.invalid"  id="signinBtn"> Sign in </button>
+    <button mat-stroked-button [routerLink]="'/sessions/register'"  id="signupBtn"> Sign up </button>
 
   </form>
 
