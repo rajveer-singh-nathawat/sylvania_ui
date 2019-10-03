@@ -1,42 +1,43 @@
-
+<div>
+  <form [formGroup]='registrationFrom'>
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill your Login Details</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Username" formControlName="firstCtrl" required>
+  <mat-step [stepControl]="registrationFrom.get('accountDetailForm')">
+    <form [formGroup]="registrationFrom" formGroupName="accountDetailForm">
+      <ng-template  matStepLabel>Fill your Login Details</ng-template>
+      <mat-form-field >
+        <input matInput placeholder="Username" formControlName="userName" required>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Email" formControlName="firstCtrl" required>
+        <input matInput placeholder="Email" formControlName="email" required>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="password" formControlName="firstCtrl" required>
+        <input matInput placeholder="Password" formControlName="password" required>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Confirm password" formControlName="firstCtrl" required>
+        <input matInput placeholder="Confirm password" formControlName="confirmPassword" required>
       </mat-form-field>
       <div>
         <button mat-button matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill your Personal Details</ng-template>
+  <mat-step [stepControl]="registrationFrom.get('personalDetailForm')">
+    <form [formGroup]="registrationFrom" formGroupName="personalDetailForm">
+      <ng-template  matStepLabel>Fill your Personal Details</ng-template>
       <mat-form-field>
-        <input matInput placeholder="FullName" formControlName="secondCtrl" required>
+        <input matInput placeholder="FullName" formControlName="fullName" required>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Address" formControlName="secondCtrl" required>
+        <input matInput placeholder="PhoneNo" formControlName="phoneNo" required>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="PhoneNo" formControlName="secondCtrl" required>
+        <input matInput placeholder="DOB" formControlName="dOB" required>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="DOB" formControlName="secondCtrl" required>
+        <input matInput placeholder="Qualification" formControlName="qualification" required>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Qualification" formControlName="secondCtrl" required>
+        <input matInput placeholder="Address" formControlName="address" required>
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>
@@ -44,34 +45,35 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="thirdFormGroup">
-    <form [formGroup]="thirdFormGroup">
-      <ng-template matStepLabel>Fill your Current Status</ng-template>
+  <mat-step [stepControl]="registrationFrom.get('currentStatusForm')">
+    <form [formGroup]="registrationFrom" formGroupName="currentStatusForm" (ngSubmit)="submitRegistrationData()">
+      <ng-template  matStepLabel>Fill your Current Status</ng-template>
       <div>
-        <label>living status</label>
-        <mat-radio-group formControlName="thirdCtrl">
+        <label >living status</label>
+        <mat-radio-group formControlName="livingStatus">
           <mat-radio-button value="auto">Sylvanian</mat-radio-button>
           <mat-radio-button value="always">Alumnus</mat-radio-button>
         </mat-radio-group>
       </div>
       <div>
-          <label>Job Status</label>
-          <mat-radio-group formControlName="thirdCtrl">
-            <mat-radio-button value="auto">Doing Job</mat-radio-button>
-            <mat-radio-button value="always">Preparing</mat-radio-button>
-          </mat-radio-group>
-        </div>
+        <label >Job Status</label>
+        <mat-radio-group formControlName="jobStatus">
+          <mat-radio-button value="auto">Doing Job</mat-radio-button>
+          <mat-radio-button value="always">Preparing</mat-radio-button>
+        </mat-radio-group>
+      </div>
       <mat-form-field>
-        <input matInput placeholder="job location" formControlName="thirdCtrl" required>
+        <input matInput placeholder="Designation" formControlName="designation" required>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Designation" formControlName="thirdCtrl" required>
+        <input matInput placeholder="job location" formControlName="jobLocation" required>
       </mat-form-field>
-      
       <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Save</button>
+        <button mat-button matStepperNext >Save</button>
       </div>
     </form>
   </mat-step>
- </mat-horizontal-stepper>
+</mat-horizontal-stepper>
+</form>
+</div>
