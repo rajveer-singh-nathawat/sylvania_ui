@@ -9,9 +9,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SessionsComponent } from './sessions.component';
 import { MaterialModule } from '../material/material.module';
 import { RegisterComponent } from './register/register.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
-  declarations: [SessionsComponent, SigninComponent, ErrorComponent, NotFoundComponent, RegisterComponent],
+  declarations: [SessionsComponent, SigninComponent, ErrorComponent, NotFoundComponent, RegisterComponent, ForgotPasswordComponent, ResetPasswordComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

@@ -6,27 +6,22 @@
 
   <form [formGroup]="signinForm" (ngSubmit)="handleLogin()" autocomplete="off">
 
-    <input id="fakeUsername" name="username" style="display:none" type="text" autocomplete="off">
-    <input id="fakePassword" name="password" style="display:none" type="password" autocomplete="off">
-
     <h3>Please fill in your username and password</h3>
 
     <mat-form-field class="full-width">
       <mat-label class="white">Username</mat-label>
-      <input matInput maxlength="30" name="userName" formControlName="userName" required id="username" autocomplete="off">
+      <input matInput maxlength="30" name="userName" formControlName="userName" required id="username" >
       <mat-error *ngIf="signinForm.controls.userName.invalid" >Username is required</mat-error>
     </mat-form-field>
 
     <mat-form-field class="full-width">
       <mat-label class="white">Password</mat-label>
-      <input matInput type="password" name="password" formControlName="password" required id="password" autocomplete="off">
+      <input matInput type="password" name="password" formControlName="password" required id="password" >
       <mat-error *ngIf="signinForm.controls.password.invalid" >Password is required</mat-error>
     </mat-form-field>
 
-    <button mat-stroked-button [disabled]= "signinForm.invalid"  id="signinBtn"> Sign in </button>
-    
+    <button mat-stroked-button [disabled]="signinForm.invalid" id="signinBtn"> Sign in </button>
     <button mat-stroked-button class="button" [routerLink]="'/sessions/register'"  id="signupBtn"> Sign up </button>
-
-  </form>
-
+    </form>
+    <a [routerLink]="'/sessions/forgot-password'" class="forgot-password">Forgot password? </a>
 </div>

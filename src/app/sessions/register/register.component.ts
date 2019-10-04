@@ -9,7 +9,7 @@ export class RegistrationData {
     public  confirmPassword: string,
     public  fullName: string,
     public  phoneNo: string,
-    public  dateOfBirth: string,
+    public  dateOfBirth: any,
     public  qualification: string,
     public  address: string,
     public  livingStatus: boolean,
@@ -33,12 +33,14 @@ export class RegisterComponent implements OnInit {
               private readonly router: Router) {}
   ngOnInit() {
       this.inItForm();
+      this.registrationFrom.get('currentStatusForm').get('livingStatus').setValue('sylvanian');
+      this.registrationFrom.get('currentStatusForm').get('jobStatus').setValue('doingJob');
       }
   inItForm() {
     this.registrationFrom = this.builder.group({
       'accountDetailForm': this.builder.group({
       userName: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', Validators.email],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required]
   }),

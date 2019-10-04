@@ -10,7 +10,9 @@ import {MatSidenavModule,
      MatFormFieldModule,
      MatInputModule,
      MatStepperModule,
-     MatRadioModule
+     MatRadioModule,
+     MatDatepickerModule,
+     MatNativeDateModule
 
 } from '@angular/material';
 import { CommonModule } from '@angular/common';
@@ -27,10 +29,12 @@ const materialComponent = [CommonModule,
   MatFormFieldModule,
   MatInputModule,
   MatStepperModule,
-  MatRadioModule
+  MatRadioModule,
+  MatDatepickerModule
 ];
 @NgModule({
-  imports: [materialComponent],
+  imports: [materialComponent,
+            MatNativeDateModule],
   exports: [materialComponent]
 })
 export class MaterialModule { }

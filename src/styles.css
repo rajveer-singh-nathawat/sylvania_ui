@@ -4,3 +4,35 @@
 body {
     margin: 0;
 }
+.mat-step-label{
+    color: rgb(248, 252, 252) !important;
+    font-size: 18px;
+    font-weight: 400;
+}
+.white{
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .mat-input-element {
+    width: 100% !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    caret-color: rgba(255, 255, 255, 0.9) !important; 
+    font-weight: 400 !important;
+  }
+
+  .mat-form-field-label .mat-form-field-required-marker {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+  }
+  .mat-form-field.mat-form-field-invalid .mat-form-field-label.mat-accent,
+  .mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker {
+    color: #ffc107;
+    font-weight: 400;
+  }
+  .mat-error {
+    color: #ffc107;
+    font-weight: 400;
+  }
+  .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+    color: #ffc107;
+  }
+ 

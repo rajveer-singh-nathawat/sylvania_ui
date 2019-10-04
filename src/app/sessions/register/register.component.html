@@ -1,79 +1,116 @@
 <div>
   <form [formGroup]='registrationFrom'>
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="registrationFrom.get('accountDetailForm')">
-    <form [formGroup]="registrationFrom" formGroupName="accountDetailForm">
-      <ng-template  matStepLabel>Fill your Login Details</ng-template>
-      <mat-form-field >
-        <input matInput placeholder="Username" formControlName="userName" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Email" formControlName="email" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Password" formControlName="password" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Confirm password" formControlName="confirmPassword" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="registrationFrom.get('personalDetailForm')">
-    <form [formGroup]="registrationFrom" formGroupName="personalDetailForm">
-      <ng-template  matStepLabel>Fill your Personal Details</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="FullName" formControlName="fullName" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="PhoneNo" formControlName="phoneNo" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="DOB" formControlName="dOB" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Qualification" formControlName="qualification" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Address" formControlName="address" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="registrationFrom.get('currentStatusForm')">
-    <form [formGroup]="registrationFrom" formGroupName="currentStatusForm" (ngSubmit)="submitRegistrationData()">
-      <ng-template  matStepLabel>Fill your Current Status</ng-template>
-      <div>
-        <label >living status</label>
-        <mat-radio-group formControlName="livingStatus">
-          <mat-radio-button value="auto">Sylvanian</mat-radio-button>
-          <mat-radio-button value="always">Alumnus</mat-radio-button>
-        </mat-radio-group>
-      </div>
-      <div>
-        <label >Job Status</label>
-        <mat-radio-group formControlName="jobStatus">
-          <mat-radio-button value="auto">Doing Job</mat-radio-button>
-          <mat-radio-button value="always">Preparing</mat-radio-button>
-        </mat-radio-group>
-      </div>
-      <mat-form-field>
-        <input matInput placeholder="Designation" formControlName="designation" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="job location" formControlName="jobLocation" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext >Save</button>
-      </div>
-    </form>
-  </mat-step>
-</mat-horizontal-stepper>
-</form>
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="registrationFrom.get('accountDetailForm')">
+        <form [formGroup]="registrationFrom" formGroupName="accountDetailForm">
+          <ng-template  matStepLabel>Fill your Login Details</ng-template>
+          <mat-form-field >
+            <mat-label class="white">Username</mat-label>
+            <input matInput maxlength="30" name="userName" formControlName="userName" required id="username">
+            <mat-error *ngIf="registrationFrom.get('accountDetailForm').controls.userName.invalid">Username is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label class="white">Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email" required id="email">
+            <mat-error *ngIf="registrationFrom.get('accountDetailForm').controls.email.invalid">Email is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label class="white">Password</mat-label>
+            <input matInput type="password" name="password" formControlName="password" required id="password">
+            <mat-error *ngIf="registrationFrom.get('accountDetailForm').controls.password.invalid">Password is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label class="white">Confirm password</mat-label>
+            <input matInput type="password" name="confirm_password" formControlName="confirmPassword" required
+              id="confirmPassword">
+            <mat-error *ngIf="registrationFrom.get('accountDetailForm').controls.confirmPassword.invalid">Confirm
+              password is required</mat-error>
+          </mat-form-field>
+          <div>
+            <button mat-stroked-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="registrationFrom.get('personalDetailForm')">
+        <form [formGroup]="registrationFrom" formGroupName="personalDetailForm">
+          <ng-template matStepLabel>Fill your Personal Details</ng-template>
+          <mat-form-field>
+            <mat-label class="white">FullName</mat-label>
+            <input matInput maxlength="30" name="fullName" formControlName="fullName" required id="fullName">
+            <mat-error *ngIf="registrationFrom.get('personalDetailForm').controls.fullName.invalid">FullName is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label class="white">PhoneNo</mat-label>
+            <input matInput name="phoneNo" formControlName="phoneNo" required id="phoneNo">
+            <mat-error *ngIf="registrationFrom.get('personalDetailForm').controls.phoneNo.invalid">PhoneNo is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label class="white">DOB</mat-label>
+            <!-- <input matInput name="dOB" formControlName="dOB" required id="dOB"> -->
+            <input matInput [matDatepicker]="picker" formControlName="dOB" [min]="minDate" [max]="maxDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="registrationFrom.get('personalDetailForm').controls.dOB.invalid">DOB is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label class="white">Qualification</mat-label>
+            <input matInput name="qualification" formControlName="qualification" required id="qualification">
+            <mat-error *ngIf="registrationFrom.get('personalDetailForm').controls.qualification.invalid">Qualification
+              is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label class="white">Address</mat-label>
+            <input matInput name="address" formControlName="address" required id="address">
+            <mat-error *ngIf="registrationFrom.get('personalDetailForm').controls.address.invalid">Address is required
+            </mat-error>
+          </mat-form-field>
+          <div>
+            <button mat-stroked-button matStepperPrevious>Back</button>
+            <button mat-stroked-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="registrationFrom.get('currentStatusForm')">
+        <form [formGroup]="registrationFrom" formGroupName="currentStatusForm" (ngSubmit)="submitRegistrationData()">
+          <ng-template matStepLabel>Fill your Current Status</ng-template>
+          <div>
+            <mat-label class="white">Living status</mat-label>
+            <mat-radio-group class="radio-group" formControlName="livingStatus" required>
+              <mat-radio-button class="radio-button" value="sylvanian">Sylvanian</mat-radio-button>
+              <mat-radio-button class="radio-button" value="alumnus">Alumnus</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div>
+            <mat-label class="white">Job Status</mat-label>
+            <mat-radio-group class="radio-group" formControlName="jobStatus" required>
+              <mat-radio-button class="radio-button" value="doingJob" checked>Doing Job</mat-radio-button>
+              <mat-radio-button class="radio-button" value="preparing">Preparing</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <mat-form-field>
+            <mat-label class="white">Designation</mat-label>
+            <input matInput name="designation" formControlName="designation" required id="designation">
+            <mat-error *ngIf="registrationFrom.get('currentStatusForm').controls.designation.invalid">Designation is
+              required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label class="white">job location</mat-label>
+            <input matInput name="jobLocation" formControlName="jobLocation" required id="jobLocation">
+            <mat-error *ngIf="registrationFrom.get('currentStatusForm').controls.jobLocation.invalid">job location is
+              required</mat-error>
+          </mat-form-field>
+          <div>
+            <button mat-stroked-button matStepperPrevious>Back</button>
+            <button mat-stroked-button [disabled]="registrationFrom.invalid">Save</button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </form>
 </div>
