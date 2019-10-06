@@ -7,16 +7,17 @@
         align-self: flex-end;
 }
 #main_menu:hover{
-  background: #fff;
+  background: #ff6f61;
   justify-content: center; 
 }
 
 #secondary_menu:hover{
-  background: #fff;
+  background: #ff6f61 !important;
 }
 .sidenav-icon{
   margin-right: 10px;
 }
 .mat-list-item{
   border-radius: 10px;
+  color: white !important;
 }

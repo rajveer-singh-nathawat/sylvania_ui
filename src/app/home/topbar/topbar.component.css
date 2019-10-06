@@ -18,6 +18,9 @@
 .nav-spacer {
   flex: 1 1 auto;
 }
-
+.mat-icon-button .mat-icon {
+ 
+  color: white !important;
+}
 
 

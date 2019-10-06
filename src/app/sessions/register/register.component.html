@@ -4,7 +4,7 @@
       <mat-step [stepControl]="registrationFrom.get('accountDetailForm')">
         <form [formGroup]="registrationFrom" formGroupName="accountDetailForm">
           <ng-template  matStepLabel>Fill your Login Details</ng-template>
-          <mat-form-field >
+          <mat-form-field>
             <mat-label class="white">Username</mat-label>
             <input matInput maxlength="30" name="userName" formControlName="userName" required id="username">
             <mat-error *ngIf="registrationFrom.get('accountDetailForm').controls.userName.invalid">Username is required
@@ -30,7 +30,7 @@
               password is required</mat-error>
           </mat-form-field>
           <div>
-            <button mat-stroked-button matStepperNext>Next</button>
+            <button mat-raised-button matStepperNext>Next</button>
           </div>
         </form>
       </mat-step>
@@ -51,7 +51,6 @@
           </mat-form-field>
           <mat-form-field>
             <mat-label class="white">DOB</mat-label>
-            <!-- <input matInput name="dOB" formControlName="dOB" required id="dOB"> -->
             <input matInput [matDatepicker]="picker" formControlName="dOB" [min]="minDate" [max]="maxDate">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
@@ -71,8 +70,8 @@
             </mat-error>
           </mat-form-field>
           <div>
-            <button mat-stroked-button matStepperPrevious>Back</button>
-            <button mat-stroked-button matStepperNext>Next</button>
+            <button mat-raised-button matStepperPrevious>Back</button>
+            <button mat-raised-button matStepperNext>Next</button>
           </div>
         </form>
       </mat-step>
@@ -106,8 +105,8 @@
               required</mat-error>
           </mat-form-field>
           <div>
-            <button mat-stroked-button matStepperPrevious>Back</button>
-            <button mat-stroked-button [disabled]="registrationFrom.invalid">Save</button>
+            <button mat-raised-button matStepperPrevious>Back</button>
+            <button mat-raised-button [disabled]="registrationFrom.invalid">Save</button>
           </div>
         </form>
       </mat-step>

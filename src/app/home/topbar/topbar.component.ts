@@ -8,13 +8,14 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class TopbarComponent implements OnInit {
   @Output ('toggleSideBar') sideBarToggle: EventEmitter<Boolean> = new EventEmitter<Boolean>();
- 
+
   constructor(private readonly auth: AuthService) { }
 currentUser:any = sessionStorage.getItem('authenticateUser');
   ngOnInit() {
+  
   }
   toggleSideBar() {
-    this.sideBarToggle.emit();
+    this.sideBarToggle.emit();    
   }
   onLoggedOut() {
     this.auth.logOut();

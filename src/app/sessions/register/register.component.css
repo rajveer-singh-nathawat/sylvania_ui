@@ -5,13 +5,12 @@
     display: flex;    
 }
 
-.mat-stroked-button{
-     margin: 0px 16px 0px 0;
-    color: rgba(255, 255, 255, 0.6);
+
+  .mat-raised-button{
+    margin: 0px 16px 0px 0;
+    background-color:  #ff6f61;
     border-color: rgba(255, 255, 255, 0.9);
     padding-left: 13px;
-    z-index: 2px;
-    box-shadow:0px 3px 5px #bdc1dc;
   }
   .radio-group {
     display: flex;
@@ -25,3 +24,16 @@
     font-weight: 300;
     font-size: 14px;
   }
+
+  :host /deep/ div.mat-form-field-wrapper {
+    width: 345px !important;
+  }
+  :host /deep/ mat-datepicker-toggle svg{
+    color: white;
+    width: 1.5em !important;
+  }
+
+  :host /deep/ mat-step-header:hover {
+    background-color: #ff6f61 !important;
+    border-radius: 10px !important;
+}

@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlumnusComponent implements OnInit {
 
+  image = 'https://material.angular.io/assets/img/examples/shiba1.jpg';
+  i=['',''];
+
   constructor() { }
 
   ngOnInit() {

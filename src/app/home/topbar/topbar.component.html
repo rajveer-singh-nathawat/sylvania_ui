@@ -7,6 +7,10 @@
     <mat-icon>portrait</mat-icon>
   </button>
       <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="onLoggedOut()" id="logout">
+              <mat-icon color="accent">lock_reset</mat-icon>
+              <span>Password reset</span>
+          </button>
       <button mat-menu-item (click)="onLoggedOut()" id="logout">
             <mat-icon color="accent">exit_to_app</mat-icon>
             <span>Sign out</span>
