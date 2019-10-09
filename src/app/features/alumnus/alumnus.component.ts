@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-alumnus',
@@ -6,12 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alumnus.component.css']
 })
 export class AlumnusComponent implements OnInit {
-
   image = 'https://material.angular.io/assets/img/examples/shiba1.jpg';
-  i=['',''];
-
-  constructor() { }
-
+  i = ['','','','','',''];
+  constructor() {}
   ngOnInit() {
   }
 

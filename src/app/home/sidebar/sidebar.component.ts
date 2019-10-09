@@ -46,7 +46,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
   }
   toggleSideBar() {
-    this.sidenav.toggle();
+   this.sidenav.toggle();
   }
   private filterMenus(source, filtered) {
 
