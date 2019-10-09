@@ -1,12 +1,6 @@
-.example-card {
-    width: 381px;
-    height: 516px;
-    left: 306px;
-    top: 16px;
-    background: #ff80ab;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+.carousel-control-prev:hover{
+    background: rgba(0, 0, 0, 0.7);
+}
+.carousel-control-next:hover{
+    background: rgba(0, 0, 0, 0.7);
+}

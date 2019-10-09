@@ -1,12 +1,13 @@
-.example-card {
-    width: 381px;
-    height: 516px;
-    left: 306px;
-    top: 16px;
-    background: #ffa980;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+
+/* Create four equal columns that sits next to each other
+And also over write left & right padding with internal stylesheet for col*/
+.row > div {
+  padding: 0 4px !important;
+}
+
+img {
+margin-top: 8px;
+vertical-align: middle;
+
+}
+
