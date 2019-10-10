@@ -22,5 +22,13 @@
  
   color: white !important;
 }
-
+.mat-icon-button.cdk-focused.cdk-mouse-focused{
+  outline: unset !important;
+}
+.mat-menu-item.cdk-focused.cdk-mouse-focused{
+  outline: unset !important;
+}
+.app-logo{
+  width: 7.7%;
+}
 

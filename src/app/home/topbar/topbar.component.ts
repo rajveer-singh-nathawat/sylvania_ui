@@ -7,7 +7,9 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./topbar.component.css']
 })
 export class TopbarComponent implements OnInit {
+  logoSrc: any = '.\assets\logonew.png';
   @Output ('toggleSideBar') sideBarToggle: EventEmitter<Boolean> = new EventEmitter<Boolean>();
+ 
   constructor(private readonly auth: AuthService) { }
 currentUser: any = sessionStorage.getItem('authenticateUser');
   ngOnInit() {

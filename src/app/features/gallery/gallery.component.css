@@ -1,13 +1,3 @@
-
-/* Create four equal columns that sits next to each other
-And also over write left & right padding with internal stylesheet for col*/
-.row > div {
-  padding: 0 4px !important;
+.row {
+  margin: 15px;
 }
-
-img {
-margin-top: 8px;
-vertical-align: middle;
-
-}
-

@@ -1,13 +1,14 @@
 <mat-toolbar id="top-nav">
   <button type="button" mat-icon-button (click)="toggleSideBar()"><mat-icon>menu</mat-icon></button>
-  <h1>Sylvania App</h1>
+  <img src=".\assets\logonew.png" alt="Sylvania App" class="app-logo">
+  <!-- <h1>Sylvania App</h1> -->
   <span class="nav-spacer"></span>
   <span class="top-nav-info" >{{currentUser}}</span>
   <button mat-icon-button [matMenuTriggerFor]="menu"  aria-label="icon-button with a menu" class="toolbar-menu">
     <mat-icon>portrait</mat-icon>
   </button>
       <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="onLoggedOut()" id="logout">
+          <button mat-menu-item  id="logout">
               <mat-icon color="accent">lock_reset</mat-icon>
               <span>Password reset</span>
           </button>
