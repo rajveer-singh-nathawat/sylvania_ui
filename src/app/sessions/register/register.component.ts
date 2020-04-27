@@ -1,24 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-export class RegistrationData {
-  constructor(
-    public  userName: string,
-    public  email: string,
-    public  password: string,
-    public  confirmPassword: string,
-    public  fullName: string,
-    public  phoneNo: string,
-    public  dateOfBirth: any,
-    public  qualification: string,
-    public  address: string,
-    public  livingStatus: boolean,
-    public  jobStatus: boolean,
-    public   designation: string,
-    public  jobLocation: string
-  ) { }
-}
-
+import { SessionService } from '../session.service';
 
 @Component({
   selector: 'app-register',
@@ -26,41 +9,44 @@ export class RegistrationData {
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registrationData: RegistrationData;
-  isLinear = true;
-  registrationFrom: FormGroup;
+  isLinear = false;
+  registrationForm: FormGroup;
+  jobFlag: any = false;
   constructor(private readonly builder: FormBuilder,
-              private readonly router: Router) {}
+    private readonly router: Router,
+    private readonly sessionService: SessionService) { }
   ngOnInit() {
-      this.inItForm();
-      this.registrationFrom.get('currentStatusForm').get('livingStatus').setValue('sylvanian');
-      this.registrationFrom.get('currentStatusForm').get('jobStatus').setValue('doingJob');
-      }
+    this.inItForm();
+  }
+
   inItForm() {
-    this.registrationFrom = this.builder.group({
-      'accountDetailForm': this.builder.group({
+    this.registrationForm = this.builder.group({
       userName: ['', Validators.required],
       email: ['', Validators.email],
       password: ['', Validators.required],
-      confirmPassword: ['', Validators.required]
-  }),
-      'personalDetailForm': this.builder.group({
+      confirmPassword: ['', Validators.required],
       fullName: ['', Validators.required],
       qualification: ['', Validators.required],
       phoneNo: ['', Validators.required],
-      dOB: ['', Validators.required],
-      address: ['', Validators.required]
-  }),
-      'currentStatusForm':  this.builder.group({
-      livingStatus: ['', Validators.required],
-      jobStatus: ['', Validators.required],
+      dateOfBirth: ['', Validators.required],
+      address: ['', Validators.required],
+      livingStatus: ['Sylvanian', Validators.required],
+      jobStatus: ['Preparing', Validators.required],
+      companyName: [''],
       designation: ['', Validators.required],
       jobLocation: ['', Validators.required],
-  })
-});
+    });
   }
-   submitRegistrationData() {
-    this.registrationData = this.registrationFrom.value;
-    console.log(this.registrationData);
-   }
+
+  submitRegistrationData() {
+    this.sessionService.register(this.registrationForm.value).subscribe((response) => {
+      this.router.navigate(['/sessions/signin']);
+    });
+  }
+  onclickDoingJob() {
+    this.jobFlag = true;
+  }
+  onClickpreparing(){
+    this.jobFlag = false;
+  }
 }

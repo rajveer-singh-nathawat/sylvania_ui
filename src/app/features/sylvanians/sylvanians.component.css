@@ -1,4 +1,4 @@
-.example-card {
+.card {
   width: 20%;
     margin: 1%;
     height: 370px;
@@ -6,15 +6,25 @@
     top: 15px;
     min-width: 263px;
     float: left;
-  background: #a893fd;
+  background: #6b5b95;
 }
 
-.example-header-image {
-  /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
+.card-header-image {
   background-size: cover;
 }
 .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.card-title{
+  color: white;
+  font-size: 15px;
+}
+.sub-title{
+  color: white;
+  font-size: 12px;
+}
+.card-button{
+  color: white;
 }

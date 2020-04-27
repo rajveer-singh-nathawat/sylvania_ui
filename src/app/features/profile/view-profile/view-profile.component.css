@@ -1,0 +1,51 @@
+
+.user-card {
+    max-width: 100%;
+  }
+  .profile-title{
+    font-size: xxx-large;
+  }
+
+  .grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+    padding-left: 22px;
+  }
+  .personal-detail-label{
+    padding-left: 22px;
+    font-size: large;
+  }
+  .detail-panel{
+    width: 60%;
+  }
+  .label{
+    color: #6b5b95;
+    font-weight: 600;
+  }
+  .user-info{
+    font-size: initial;
+  }
+  .panel-titel, mat-icon{
+    font-size: large;
+    padding-top: 6.5px;
+  }
+  .profileImg{
+    padding-bottom: 14%;
+    inline-size: -webkit-fill-available;
+  }
+  .img-section{
+    padding-left: 26%;
+  }
+  .profile-buttons{
+    margin-left: .7% !important;
+    background-color: #6b5b95;
+    color: white;
+  }
+  .back-buttons{
+    height: 2%;
+    margin-left: 78%;
+    background-color: #6b5b95;
+    color: white;
+  }
+ 

@@ -7,6 +7,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
+import { HttpRequestInterceptorModule } from './services/httpinterceptor/httpinterceptor.service';
+import { AuthorizationGuard } from './guards/authorization.guard';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -17,13 +21,15 @@ import { MaterialModule } from './material/material.module';
   ],
   imports: [
     BrowserModule,
-    
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpRequestInterceptorModule,
+    RouterModule.forRoot([])
      ],
-  providers: [],
+  providers: [AuthorizationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

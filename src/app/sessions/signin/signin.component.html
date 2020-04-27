@@ -9,9 +9,9 @@
     <h3>Please fill in your username and password</h3>
 
     <mat-form-field class="full-width">
-      <mat-label class="white">Username</mat-label>
-      <input matInput maxlength="30" name="userName" formControlName="userName" required id="username" >
-      <mat-error *ngIf="signinForm.controls.userName.invalid" >Username is required</mat-error>
+      <mat-label class="white">UserName Or Email</mat-label>
+      <input matInput maxlength="30" name="userNameOrEmail" formControlName="userNameOrEmail" required id="userNameOrEmail" >
+      <mat-error *ngIf="signinForm.controls.userNameOrEmail.invalid" >UserName Or Email is required</mat-error>
     </mat-form-field>
 
     <mat-form-field class="full-width">

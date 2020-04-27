@@ -4,7 +4,8 @@ import {MatSidenavModule,
    MatToolbarModule,
      MatButtonModule,
      MatIconModule,
-   MatListModule,
+     MatListModule,
+     MatSnackBarModule,
      MatMenuModule,
      MatDividerModule,
      MatFormFieldModule,
@@ -12,7 +13,8 @@ import {MatSidenavModule,
      MatStepperModule,
      MatRadioModule,
      MatDatepickerModule,
-     MatNativeDateModule
+     MatNativeDateModule,
+     MatExpansionModule
 
 } from '@angular/material';
 import { CommonModule } from '@angular/common';
@@ -23,6 +25,7 @@ const materialComponent = [CommonModule,
   MatToolbarModule,
   MatButtonModule,
   MatIconModule,
+  MatSnackBarModule,
   MatListModule,
   MatMenuModule,
   MatDividerModule,
@@ -30,7 +33,8 @@ const materialComponent = [CommonModule,
   MatInputModule,
   MatStepperModule,
   MatRadioModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatExpansionModule
 ];
 @NgModule({
   imports: [materialComponent,

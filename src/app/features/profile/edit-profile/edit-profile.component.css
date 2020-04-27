@@ -1,0 +1,53 @@
+
+.mat-form-field {
+  display: flex;    
+}
+
+
+.mat-raised-button{
+  margin: 0px 16px 0px 0;
+  background-color:  #ff6f61;
+  border-color: #6b5b95;
+  padding-left: 13px;
+}
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0;
+}
+
+.radio-button {
+  margin: 3px;
+  color: #6b5b95;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+:host /deep/ div.mat-form-field-wrapper {
+  width: 345px !important;
+  
+}
+:host /deep/ mat-datepicker-toggle svg{
+  color: #6b5b95;
+  width: 1.5em !important;
+}
+
+.text-color{
+  color: #6b5b95;
+}
+
+.user-card {
+  max-width: 100%;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  
+  padding-left: 22px;
+}
+.back-buttons{
+  height: 2%;
+  margin-left: 80%;
+  background-color: #6b5b95;
+  color: white;
+}

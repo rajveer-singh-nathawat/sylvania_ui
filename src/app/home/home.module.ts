@@ -7,6 +7,7 @@ import { HomeComponent } from './home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { MaterialModule } from '../material/material.module';
+import { HttpRequestInterceptorModule } from '../services/httpinterceptor/httpinterceptor.service';
 
 @NgModule({
   declarations: [HomeComponent, SidebarComponent, TopbarComponent],
@@ -14,7 +15,8 @@ import { MaterialModule } from '../material/material.module';
     CommonModule,
     HomeRoutingModule,
      FormsModule,
-    MaterialModule
+    MaterialModule,
+    HttpRequestInterceptorModule
   ]
 })
 export class HomeModule { }

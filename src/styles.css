@@ -5,7 +5,8 @@ body {
     margin: 0;
 }
 .mat-step-label{
-    color: rgb(248, 252, 252) !important;
+    /* color: rgb(248, 252, 252) !important; */
+    color: white;
     font-size: 18px;
     font-weight: 400;
 }
@@ -14,7 +15,8 @@ body {
   }
   .mat-input-element {
     width: 100% !important;
-    color: rgba(255, 255, 255, 0.9) !important;
+    /* color: rgba(255, 255, 255, 0.9) !important; */
+    color: black !important;
     caret-color: rgba(255, 255, 255, 0.9) !important; 
     font-weight: 400 !important;
   }

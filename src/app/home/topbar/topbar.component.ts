@@ -11,7 +11,7 @@ export class TopbarComponent implements OnInit {
   @Output ('toggleSideBar') sideBarToggle: EventEmitter<Boolean> = new EventEmitter<Boolean>();
  
   constructor(private readonly auth: AuthService) { }
-currentUser: any = sessionStorage.getItem('authenticateUser');
+currentUser: any = sessionStorage.getItem('currentUser');
   ngOnInit() {
   }
   toggleSideBar() {

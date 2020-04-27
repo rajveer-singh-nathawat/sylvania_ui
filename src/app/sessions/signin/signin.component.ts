@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {  Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-export class User {
-constructor(
-  public userName: string,
-  public password: string
-) {}
-}
+import { SessionService } from '../session.service';
+// export class User {
+// constructor(
+//   public userName: string,
+//   public password: string
+// ) {}
+// }
 
 @Component({
   selector: 'app-signin',
@@ -18,33 +19,37 @@ constructor(
 
 export class SigninComponent implements OnInit {
 
-    user: User;
+    // user: User;
     signinForm: FormGroup;
     signinError = 'invalid credentials';
     // tslint:disable-next-line: no-inferrable-types
     isLogin: boolean = false;
 
-  constructor(private readonly builder: FormBuilder,
-              private readonly auth: AuthService,
-              private readonly router: Router
+  constructor(private  builder: FormBuilder,
+              private  auth: AuthService,
+              private  router: Router,
+              private  sessionService: SessionService,
               ) {}
 
   ngOnInit() {
     this.inItForm();
   }
   handleLogin() {
-    this.user = this.signinForm.value;
-    if (this.auth.authenticate(this.user.userName, this.user.password)) {
-      this.isLogin = false;
-      this.router.navigate(['dashboard']);
-        } else {
-      this.isLogin = true;
-    }
+    this.sessionService.onLogin(this.signinForm.value).subscribe((response: any)=>{
+      if(this.auth.authenticate(response)) {
+        this.isLogin = false;
+        this.router.navigate(['dashboard']); 
+      }
+      else{
+        this.router.navigateByUrl('/'); 
+      }}), err => {
+        console.log(err);
+      }
   }
 
   inItForm() {
     this.signinForm = this.builder.group({
-      userName: ['', Validators.required],
+      userNameOrEmail: ['', Validators.required],
       password: ['', Validators.required]
     });
   }

@@ -1,115 +1,119 @@
 <div>
-  <form [formGroup]='registrationFrom'>
-    <mat-horizontal-stepper [linear]="isLinear" #stepper>
-      <mat-step [stepControl]="registrationFrom.get('accountDetailForm')">
-        <form [formGroup]="registrationFrom" formGroupName="accountDetailForm">
-          <ng-template  matStepLabel>Fill your Login Details</ng-template>
-          <mat-form-field>
-            <mat-label class="white">Username</mat-label>
-            <input matInput maxlength="30" name="userName" formControlName="userName" required id="username">
-            <mat-error *ngIf="registrationFrom.get('accountDetailForm').controls.userName.invalid">Username is required
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label class="white">Email</mat-label>
-            <input matInput placeholder="Email" formControlName="email" required id="email">
-            <mat-error *ngIf="registrationFrom.get('accountDetailForm').controls.email.invalid">Email is required
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label class="white">Password</mat-label>
-            <input matInput type="password" name="password" formControlName="password" required id="password">
-            <mat-error *ngIf="registrationFrom.get('accountDetailForm').controls.password.invalid">Password is required
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label class="white">Confirm password</mat-label>
-            <input matInput type="password" name="confirm_password" formControlName="confirmPassword" required
-              id="confirmPassword">
-            <mat-error *ngIf="registrationFrom.get('accountDetailForm').controls.confirmPassword.invalid">Confirm
-              password is required</mat-error>
-          </mat-form-field>
-          <div>
-            <button mat-raised-button matStepperNext>Next</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="registrationFrom.get('personalDetailForm')">
-        <form [formGroup]="registrationFrom" formGroupName="personalDetailForm">
-          <ng-template matStepLabel>Fill your Personal Details</ng-template>
-          <mat-form-field>
-            <mat-label class="white">FullName</mat-label>
-            <input matInput maxlength="30" name="fullName" formControlName="fullName" required id="fullName">
-            <mat-error *ngIf="registrationFrom.get('personalDetailForm').controls.fullName.invalid">FullName is required
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label class="white">PhoneNo</mat-label>
-            <input matInput name="phoneNo" formControlName="phoneNo" required id="phoneNo">
-            <mat-error *ngIf="registrationFrom.get('personalDetailForm').controls.phoneNo.invalid">PhoneNo is required
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label class="white">DOB</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="dOB" [min]="minDate" [max]="maxDate">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-            <mat-error *ngIf="registrationFrom.get('personalDetailForm').controls.dOB.invalid">DOB is required
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label class="white">Qualification</mat-label>
-            <input matInput name="qualification" formControlName="qualification" required id="qualification">
-            <mat-error *ngIf="registrationFrom.get('personalDetailForm').controls.qualification.invalid">Qualification
-              is required</mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label class="white">Address</mat-label>
-            <input matInput name="address" formControlName="address" required id="address">
-            <mat-error *ngIf="registrationFrom.get('personalDetailForm').controls.address.invalid">Address is required
-            </mat-error>
-          </mat-form-field>
-          <div>
-            <button mat-raised-button matStepperPrevious>Back</button>
-            <button mat-raised-button matStepperNext>Next</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="registrationFrom.get('currentStatusForm')">
-        <form [formGroup]="registrationFrom" formGroupName="currentStatusForm" (ngSubmit)="submitRegistrationData()">
-          <ng-template matStepLabel>Fill your Current Status</ng-template>
-          <div>
-            <mat-label class="white">Living status</mat-label>
-            <mat-radio-group class="radio-group" formControlName="livingStatus" required>
-              <mat-radio-button class="radio-button" value="sylvanian">Sylvanian</mat-radio-button>
-              <mat-radio-button class="radio-button" value="alumnus">Alumnus</mat-radio-button>
-            </mat-radio-group>
-          </div>
-          <div>
-            <mat-label class="white">Job Status</mat-label>
-            <mat-radio-group class="radio-group" formControlName="jobStatus" required>
-              <mat-radio-button class="radio-button" value="doingJob" checked>Doing Job</mat-radio-button>
-              <mat-radio-button class="radio-button" value="preparing">Preparing</mat-radio-button>
-            </mat-radio-group>
-          </div>
-          <mat-form-field>
-            <mat-label class="white">Designation</mat-label>
-            <input matInput name="designation" formControlName="designation" required id="designation">
-            <mat-error *ngIf="registrationFrom.get('currentStatusForm').controls.designation.invalid">Designation is
-              required</mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label class="white">job location</mat-label>
-            <input matInput name="jobLocation" formControlName="jobLocation" required id="jobLocation">
-            <mat-error *ngIf="registrationFrom.get('currentStatusForm').controls.jobLocation.invalid">job location is
-              required</mat-error>
-          </mat-form-field>
-          <div>
-            <button mat-raised-button matStepperPrevious>Back</button>
-            <button mat-raised-button [disabled]="registrationFrom.invalid">Save</button>
-          </div>
-        </form>
-      </mat-step>
-    </mat-horizontal-stepper>
-  </form>
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="registrationForm">
+      <form [formGroup]="registrationForm">
+        <ng-template matStepLabel>Fill your Login Details</ng-template>
+        <mat-form-field>
+          <mat-label class="white">Username</mat-label>
+          <input matInput maxlength="30" name="userName" formControlName="userName" required id="username">
+          <mat-error *ngIf="registrationForm.controls.userName.invalid">Username is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="white">Email</mat-label>
+          <input matInput placeholder="Email" formControlName="email" required id="email">
+          <mat-error *ngIf="registrationForm.controls.email.invalid">Email is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="white">Password</mat-label>
+          <input matInput type="password" name="password" formControlName="password" required id="password">
+          <mat-error *ngIf="registrationForm.controls.password.invalid">Password is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="white">Confirm password</mat-label>
+          <input matInput type="password" name="confirm_password" formControlName="confirmPassword" required
+            id="confirmPassword">
+          <mat-error *ngIf="registrationForm.controls.confirmPassword.invalid">Confirm
+            password is required</mat-error>
+        </mat-form-field>
+        <div>
+          <button mat-raised-button matStepperNext>Next</button>
+          <a class="white" href="/"> Already have account?</a>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="registrationForm">
+      <form [formGroup]="registrationForm">
+        <ng-template matStepLabel>Fill your Personal Details</ng-template>
+        <mat-form-field>
+          <mat-label class="white">FullName</mat-label>
+          <input matInput maxlength="30" name="fullName" formControlName="fullName" required id="fullName">
+          <mat-error *ngIf="registrationForm.controls.fullName.invalid">FullName is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="white">PhoneNo</mat-label>
+          <input matInput name="phoneNo" formControlName="phoneNo" required id="phoneNo">
+          <mat-error *ngIf="registrationForm.controls.phoneNo.invalid">PhoneNo is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="white">DOB</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" [min]="minDate" [max]="maxDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="registrationForm.controls.dateOfBirth.invalid">DOB is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="white">Qualification</mat-label>
+          <input matInput name="qualification" formControlName="qualification" required id="qualification">
+          <mat-error *ngIf="registrationForm.controls.qualification.invalid">Qualification
+            is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="white">Address</mat-label>
+          <input matInput name="address" formControlName="address" required id="address">
+          <mat-error *ngIf="registrationForm.controls.address.invalid">Address is required
+          </mat-error>
+        </mat-form-field>
+        <div>
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="registrationForm">
+      <form [formGroup]="registrationForm" (ngSubmit)="submitRegistrationData()">
+        <ng-template matStepLabel>Fill your Current Status</ng-template>
+        <div>
+          <mat-label class="white">Living Status</mat-label>
+          <mat-radio-group class="radio-group" formControlName="livingStatus" required>
+            <mat-radio-button class="radio-button" value="Sylvanian">Sylvanian</mat-radio-button>
+            <mat-radio-button class="radio-button" value="Alumnus">Alumnus</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div>
+          <mat-label class="white">Job Status</mat-label>
+          <mat-radio-group class="radio-group" formControlName="jobStatus" required>
+            <mat-radio-button class="radio-button" (click)="onClickpreparing()"value="Preparing">Preparing</mat-radio-button>
+            <mat-radio-button class="radio-button" (click)="onclickDoingJob()" value="DoingJob">Doing Job</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <mat-form-field *ngIf="jobFlag">
+          <mat-label class="white">Company Name</mat-label>
+          <input matInput name="jobStatus" formControlName="companyName" required id="companyName">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="white">Designation</mat-label>
+          <input matInput name="designation" formControlName="designation" required id="designation">
+          <mat-error *ngIf="registrationForm.controls.designation.invalid">Designation is
+            required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="white">Job Location</mat-label>
+          <input matInput name="jobLocation" formControlName="jobLocation" required id="jobLocation">
+          <mat-error *ngIf="registrationForm.controls.jobLocation.invalid">job location is
+            required</mat-error>
+        </mat-form-field>
+        <div>
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button type="submit" mat-raised-button [disabled]="registrationForm.invalid">Save</button>
+
+        </div>
+      </form>
+    </mat-step>
+  </mat-horizontal-stepper>
 </div>

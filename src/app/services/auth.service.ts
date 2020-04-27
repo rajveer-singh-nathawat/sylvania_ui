@@ -8,9 +8,8 @@ import {  Router } from '@angular/router';
 export  class AuthService {
 
   constructor(private readonly route: Router ) { }
-   authenticate(username , password ) {
-    if (username === 'rajveer' && password === 'singh') {
-     sessionStorage.setItem('authenticateUser', username);
+   authenticate(token) {
+    if (token === sessionStorage.getItem('token')) {
      return true;
     } else {
     return false;
@@ -18,14 +17,14 @@ export  class AuthService {
   }
 
   userData() {
-let principle = sessionStorage.getItem('authenticateUser');
+let principle = sessionStorage.getItem('currentUser');
   }
   isUserLogin() {
-    const user = sessionStorage.getItem('authenticateUser');
+    const user = sessionStorage.getItem('currentUser');
     return !(user === null );
   }
  async logOut() {
-   await sessionStorage.removeItem('authenticateUser');
+   await sessionStorage.removeItem('currentUser');
    this.route.navigate(['sessions']);
   }
 }
