@@ -5,13 +5,13 @@ import { AutenticationGuardGuard } from './guards/autentication-guard.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: './home/home.module#HomeModule',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
     canActivate: [AutenticationGuardGuard],
     // data: { title: '', breadcrumb: ''},
   },
   {
     path: 'sessions',
-    loadChildren: './sessions/sessions.module#SessionsModule',
+    loadChildren: () => import('./sessions/sessions.module').then(m => m.SessionsModule),
     // data: { title: '', breadcrumb: '' }
   },
   {
