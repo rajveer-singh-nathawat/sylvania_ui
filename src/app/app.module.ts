@@ -27,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     HttpRequestInterceptorModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([], { relativeLinkResolution: 'legacy' })
      ],
   providers: [AuthorizationGuard],
   bootstrap: [AppComponent]
