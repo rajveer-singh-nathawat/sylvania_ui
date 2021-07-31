@@ -25,15 +25,15 @@
     font-size: 14px;
   }
 
-  :host /deep/ div.mat-form-field-wrapper {
+  :host ::ng-deep div.mat-form-field-wrapper {
     width: 345px !important;
   }
-  :host /deep/ mat-datepicker-toggle svg{
+  :host ::ng-deep mat-datepicker-toggle svg{
     color: white;
     width: 1.5em !important;
   }
 
-  :host /deep/ mat-step-header:hover {
+  :host ::ng-deep mat-step-header:hover {
     background-color: #ff6f61 !important;
     border-radius: 10px !important;
 }

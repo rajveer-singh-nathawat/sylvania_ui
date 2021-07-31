@@ -23,11 +23,11 @@
   font-size: 14px;
 }
 
-:host /deep/ div.mat-form-field-wrapper {
+:host ::ng-deep div.mat-form-field-wrapper {
   width: 345px !important;
   
 }
-:host /deep/ mat-datepicker-toggle svg{
+:host ::ng-deep mat-datepicker-toggle svg{
   color: #6b5b95;
   width: 1.5em !important;
 }
