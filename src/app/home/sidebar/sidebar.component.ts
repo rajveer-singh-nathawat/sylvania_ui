@@ -38,7 +38,7 @@ const secondryDefaultMenu: MenuItem[] = [{
 export class SidebarComponent implements OnInit {
   primaryMenu: MenuItem[] = [];
   secondaryMenu: MenuItem[] = [];
-  @ViewChild('sidenav') sidenav: any;
+  @ViewChild('sidenav', { static: false }) sidenav: any;
   constructor() {
     this.filterMenus(sideMenu, this.primaryMenu);
     this.filterMenus(secondryDefaultMenu, this.secondaryMenu);
