@@ -60,21 +60,21 @@
             <div>
               <mat-label class="text-color">Living Status</mat-label>
               <mat-radio-group class="radio-group" formControlName="livingStatus" required>
-                <mat-radio-button class="radio-button" value="sylvanian">Sylvanian</mat-radio-button>
-                <mat-radio-button class="radio-button" value="alumnus">Alumnus</mat-radio-button>
+                <mat-radio-button class="radio-button" value="Sylvanian">Sylvanian</mat-radio-button>
+                <mat-radio-button class="radio-button" value="Alumnus">Alumnus</mat-radio-button>
               </mat-radio-group>
             </div>
             <div>
               <mat-label class="text-color" >Job Status</mat-label>
               <mat-radio-group class="radio-group"  formControlName="jobStatus" required>
-                <mat-radio-button class="radio-button" value="preparing">Preparing</mat-radio-button>
-                <mat-radio-button class="radio-button" value="doingJob">
+                <mat-radio-button class="radio-button" (click)="onClickPreparing()" value="Preparing">Preparing</mat-radio-button>
+                <mat-radio-button class="radio-button" (click)="onClickDoingJob()" value="DoingJob">
                   Doing Job</mat-radio-button>
               </mat-radio-group>
             </div>
             <mat-form-field *ngIf="CompanyFlag">
             <mat-label class="text-color">Company Name</mat-label>
-            <input matInput name="companyName" formControlName="companyName" required id="companyName">
+            <input matInput name="companyName" formControlName="companyName"  id="companyName">
              </mat-form-field>
             <mat-form-field>
               <mat-label class="text-color">Designation</mat-label>

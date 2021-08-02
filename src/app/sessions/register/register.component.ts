@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SessionService } from '../session.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,8 @@ export class RegisterComponent implements OnInit {
   jobFlag: any = false;
   constructor(private readonly builder: FormBuilder,
     private readonly router: Router,
-    private readonly sessionService: SessionService) { }
+    private readonly sessionService: SessionService,
+    private readonly matSnack : MatSnackBar) { }
   ngOnInit() {
     this.inItForm();
   }
@@ -40,6 +42,7 @@ export class RegisterComponent implements OnInit {
 
   submitRegistrationData() {
     this.sessionService.register(this.registrationForm.value).subscribe((response) => {
+      this.matSnack.open('Acount created!!','exit',{duration:6000})
       this.router.navigate(['/sessions/signin']);
     });
   }

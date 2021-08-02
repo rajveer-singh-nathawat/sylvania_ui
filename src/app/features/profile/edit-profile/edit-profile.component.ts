@@ -27,13 +27,13 @@ export class EditProfileComponent implements OnInit {
   }
   getProfileData() {
     this.profileService.getCurrentUserProfile().subscribe((response)=>{
-      if(response.jobStatus != 'preparing'){
+      if(response.jobStatus != 'Preparing'){
         this.CompanyFlag = true;
       } 
       this.userProfileData = response;
-
       this.registrationForm.patchValue(response);
        this.registrationForm.get('email').disable();
+       
       if(response.dateOfBirth) {
         this.registrationForm.get('dateOfBirth').setValue(new Date(response.dateOfBirth));
       }
@@ -66,6 +66,12 @@ export class EditProfileComponent implements OnInit {
 }
 backButton(){
   this.location.back();
+}
+onClickDoingJob(){
+  this.CompanyFlag = true;
+}
+onClickPreparing(){
+  this.CompanyFlag = false;
 }
 
 }

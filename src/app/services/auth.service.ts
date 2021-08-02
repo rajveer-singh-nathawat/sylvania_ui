@@ -25,6 +25,8 @@ let principle = sessionStorage.getItem('currentUser');
   }
  async logOut() {
    await sessionStorage.removeItem('currentUser');
+   sessionStorage.removeItem('currentUserId');
+   sessionStorage.removeItem('token');
    this.route.navigate(['sessions']);
   }
 }

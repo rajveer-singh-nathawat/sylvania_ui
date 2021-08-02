@@ -28,3 +28,8 @@
 .card-button{
   color: white;
 }
+.mat-card-image {
+  width: 114%;
+  object-fit: cover;
+  height: 61%;
+}

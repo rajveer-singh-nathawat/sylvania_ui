@@ -4,70 +4,78 @@
     <button mat-raised-button class="back-buttons" (click)="backButton()">Back</button>
   </mat-card-header>
   <mat-card-content>
-    <mat-panel-title class="personal-detail-label"> 
+    <mat-panel-title class="personal-detail-label">
       Personal Details
-      
+
     </mat-panel-title>
     <br>
     <div class="grid-container">
       <div class=" grid-container">
         <div class="first-column">
-      
-        <mat-label class="label">User Name</mat-label>
-        <p class="user-info">{{userProfileData?.userName}}</p>
 
-        <mat-label class="label">Full name</mat-label>
-        <p class="user-info">{{userProfileData?.fullName}}</p>
-      
-  
-        <mat-label class="label">Email</mat-label>
-        <p class="user-info">{{userProfileData?.email}}</p>
+          <mat-label class="label">User Name</mat-label>
+          <p class="user-info">{{userProfileData?.userName}}</p>
 
-        <mat-label class="label">Phone No.</mat-label>
-        <p class="user-info">{{userProfileData?.phoneNo}}</p>
-      </div>
-      <div class="first-column">
+          <mat-label class="label">Full name</mat-label>
+          <p class="user-info">{{userProfileData?.fullName}}</p>
 
-        <mat-label class="label">Date Of Birth</mat-label>
-        <p class="user-info">{{userProfileData?.dateOfBirth | date: 'dd/MM/yyyy'}}</p>
 
-        <mat-label class="label">Qualification</mat-label>
-        <p class="user-info">{{userProfileData?.qualification}}</p>
+          <mat-label class="label">Email</mat-label>
+          <p class="user-info">{{userProfileData?.email}}</p>
 
-        <mat-label class="label">Address</mat-label>
-        <p class="user-info">{{userProfileData?.address}}</p>
-      </div>
+          <mat-label class="label">Phone No.</mat-label>
+          <p class="user-info">{{userProfileData?.phoneNo}}</p>
+        </div>
+        <div class="first-column">
+
+          <mat-label class="label">Date Of Birth</mat-label>
+          <p class="user-info">{{userProfileData?.dateOfBirth | date: 'dd/MM/yyyy'}}</p>
+
+          <mat-label class="label">Qualification</mat-label>
+          <p class="user-info">{{userProfileData?.qualification}}</p>
+          <mat-label class="label">Living status</mat-label>
+          <p class="user-info">{{userProfileData?.livingStatus}}</p>
+
+          <mat-label class="label">Address</mat-label>
+          <p class="user-info">{{userProfileData?.address}}</p>
+        </div>
       </div>
       <div class="img-section">
-       
-        <img class="profileImg" src="../../../../../assets/icon-user-big.png" alt="profile image" />
+
+        <img class="profileImg"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT37uQ6gOWSZrLzpcbYBv58kUXqjih6_5fa32s5TMWZ0t1doJnZ&usqp=CAU"
+          alt="profile image" />
       </div>
     </div>
 
     <mat-accordion>
-            <mat-expansion-panel class="detail-panel">
+      <mat-expansion-panel class="detail-panel">
         <mat-expansion-panel-header>
-          <mat-panel-title class="panel-titel"> 
+          <mat-panel-title class="panel-titel">
             Current Job Status
           </mat-panel-title>
-          
+
         </mat-expansion-panel-header>
         <div class=" grid-container">
           <div class="first-column">
 
-        <mat-label class="label">Living status</mat-label>
-        <p class="user-info">{{userProfileData?.livingStatus}}</p>
 
-        <mat-label class="label">Job Status</mat-label>
-          <p class="user-info">{{userProfileData?.jobStatus}}</p>
 
-          <mat-label class="label">Designation</mat-label>
-          <p class="user-info">{{userProfileData?.designation}}</p>
+            <mat-label class="label">Job Status</mat-label>
+            <p class="user-info">{{userProfileData?.jobStatus}}</p>
 
-          <mat-label class="label">Job Location</mat-label>
-          <p class="user-info">{{userProfileData?.jobLocation}}</p>
+            <mat-label class="label">Designation</mat-label>
+            <p class="user-info">{{userProfileData?.designation}}</p>
+
+
+          </div>
+          <div class="first-column">
+            <mat-label class="label" *ngIf="userProfileData?.companyName">Working At</mat-label>
+            <p class="user-info" *ngIf="userProfileData?.companyName">{{userProfileData?.companyName}}</p>
+            <mat-label class="label">Job Location</mat-label>
+            <p class="user-info">{{userProfileData?.jobLocation}}</p>
+          </div>
         </div>
-      </div>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-card-content>
