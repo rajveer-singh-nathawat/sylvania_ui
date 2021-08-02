@@ -16,32 +16,32 @@ const homeroutes: Routes = [{
     children: [
       {
         path: 'dashboard',
-        loadChildren: '../features/dashboard/dashboard.module#DashboardModule',
+        loadChildren: () => import('../features/dashboard/dashboard.module').then(m => m.DashboardModule),
         data: {roles: ['ALL']}
       },
       {
         path: 'alumnus',
-        loadChildren: '../features/alumnus/alumnus.module#AlumnusModule',
+        loadChildren: () => import('../features/alumnus/alumnus.module').then(m => m.AlumnusModule),
         data: {roles: ['ALL']}
       },
       {
         path: 'sylvanians',
-        loadChildren: '../features/sylvanians/sylvanians.module#SylvaniansModule',
+        loadChildren: () => import('../features/sylvanians/sylvanians.module').then(m => m.SylvaniansModule),
         data: {roles: ['ALL']}
       },
       {
         path: 'gallery',
-        loadChildren: '../features/gallery/gallery.module#GalleryModule',
+        loadChildren: () => import('../features/gallery/gallery.module').then(m => m.GalleryModule),
         data: {roles: ['ALL']}
       },
       {
         path: 'help',
-        loadChildren: '../features/help/help.module#HelpModule',
+        loadChildren: () => import('../features/help/help.module').then(m => m.HelpModule),
         data: {roles: ['ALL']}
       },
       {
         path: 'profile',
-        loadChildren: '../features/profile/profile.module#ProfileModule',
+        loadChildren: () => import('../features/profile/profile.module').then(m => m.ProfileModule),
         data: {roles: ['ALL']}
       },
     ]

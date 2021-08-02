@@ -27,7 +27,7 @@ import { GlobalErrorHandler } from './shared/components/GlobalErrorHandler';
     BrowserAnimationsModule,
     MaterialModule,
     HttpRequestInterceptorModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([], { relativeLinkResolution: 'legacy' })
      ],
   providers: [AuthorizationGuard,{provide: ErrorHandler, useClass:
     GlobalErrorHandler}],
