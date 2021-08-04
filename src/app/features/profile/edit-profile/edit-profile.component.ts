@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {Location} from '@angular/common';
 import { Router } from '@angular/router';
 import { ProfileService } from '../profile.service';
-import {  MatSnackBar } from '@angular/material';
+import {  MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-edit-profile',
@@ -58,7 +58,7 @@ export class EditProfileComponent implements OnInit {
     });
   }
   
-  saveEditedData(registrationForm) {
+  saveEditedData() {
     this.profileService.editDetails(this.registrationForm.value).subscribe((response) => {
      this.snackBar.open('Profile updated successfully!!','exit',{duration: 6000});
      this.router.navigate(['/profile/view-profile']);
